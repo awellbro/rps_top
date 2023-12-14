@@ -16,11 +16,30 @@ function getComputerChoice() {
 
 
 function play(x, y) {
- let playSel = x.toLowerCase();
- let compSel = y.toLowerCase();
- console.log(playSel, compSel);
+let playSel = x.toLowerCase();
+let compSel = y.toLowerCase();
+if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
+    if (playSel === compSel){
+        return "Tie!"
+    } else if(playSel === "rock" && compSel === "scissors"){
+    return `You Win! ${x} beats ${y}!`;
+    } else if(playSel === "rock" && compSel === "paper"){
+    return `You Lose! ${y} beats ${y}!`;
+    } else if(playSel === "paper" && compSel === "rock"){
+    return `You Win! ${x} beats ${y}!`;
+    } else if(playSel === "paper" && compSel === "scissors"){
+    return `You Lose! ${y} beats ${y}!`;
+    } else if(playSel === "scissors" && compSel === "paper"){
+    return `You Win! ${x} beats ${y}!`;
+    } else if(playSel === "scissors" && compSel === "rock"){
+    return `You Lose! ${y} beats ${y}!`;
+    }}
+    else {
+        return `${x} is not a recognized value, please try again.`;
+    }
+//console.log(playSel, compSel);
 };
 
-play(playerSelection, computerSelection);
+document.write(play(playerSelection, computerSelection));
 
 //document.write(playerSelection, computerSelection);
