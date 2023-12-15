@@ -1,8 +1,6 @@
 function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
-//const computerSelection = getComputerChoice();
-
 function getComputerChoice() {
-    let num = (Math.floor(Math.random()*100))
+    let num = (Math.floor(Math.random()*99))
     if (num <= 33){
         return "Rock";
     }
@@ -14,12 +12,10 @@ function getComputerChoice() {
     };
 }
 
-
 function play(x, y) {
 let playSel = x.toLowerCase();
 let compSel = y.toLowerCase();
 if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
-   //document.write(`Player: ${x}, Comp: ${y}: `);
     if (playSel == compSel){
         return play(playerSelection(), getComputerChoice());
     } else if(playSel == "rock" && compSel == "scissors"){
@@ -36,28 +32,25 @@ if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
         return `You Lose! ${y} beats ${x}!`;
     }}
 else {
-    return `${x} is not a recognized value, please try again.`;
+    return play(playerSelection(), getComputerChoice());
     }
 };
 
-
-
-//document.write(
 function game() {
     const playScore = [];
     const compScore = [];
-
     for(let i = 0; i < 5; i++){
-
-
-        if(play(playerSelection(), getComputerChoice()).includes("Win")){
-            playScore.push("I");
-        } else {//(play(playerSelection(), getComputerChoice()).includes("Lose"))
+        let x = play(playerSelection(), getComputerChoice())
+        if(x.includes("Win")){
+            playScore.push("I")
+            console.log(x);
+        } else {
             compScore.push("I")
+            console.log(x);
         }
-        console.log(`Player Score: ${playScore}, Computer Score: ${compScore}`);
+        console.log(`Player Score: ${playScore} | Computer Score: ${compScore}`);
+        
 
-       //console.log();
     }
     if (playScore.length > compScore.length){
         return "You win!"
@@ -66,4 +59,4 @@ function game() {
      }
     };
 
-document.write(game());
+console.log(game());
