@@ -1,4 +1,4 @@
-const playerSelection = prompt("Choose: Rock, Paper, or Scissors");
+function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
 const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
@@ -41,7 +41,4 @@ else {
     }
 };
 
-document.write(play(playerSelection, computerSelection));
-
-
-//document.write(playerSelection, computerSelection);
+document.write(play(playerSelection(), computerSelection));
