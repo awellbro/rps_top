@@ -1,5 +1,5 @@
 function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
-const computerSelection = getComputerChoice();
+//const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     let num = (Math.floor(Math.random()*100))
@@ -22,7 +22,8 @@ if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
     document.write(`Player: ${x}, Comp: ${y}: `);
 
     if (playSel == compSel){
-        return "Tie!"
+        return "Tie"
+        //return play(playerSelection(), computerSelection);
     } else if(playSel == "rock" && compSel == "scissors"){
         return `You Win! ${x} beats ${y}!`;
     } else if(playSel == "rock" && compSel == "paper"){
@@ -41,4 +42,4 @@ else {
     }
 };
 
-document.write(play(playerSelection(), computerSelection));
+document.write(play(playerSelection(), getComputerChoice()));
