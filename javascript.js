@@ -19,11 +19,9 @@ function play(x, y) {
 let playSel = x.toLowerCase();
 let compSel = y.toLowerCase();
 if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
-    document.write(`Player: ${x}, Comp: ${y}: `);
-
+   //document.write(`Player: ${x}, Comp: ${y}: `);
     if (playSel == compSel){
-        return "Tie"
-        //return play(playerSelection(), computerSelection);
+        return play(playerSelection(), getComputerChoice());
     } else if(playSel == "rock" && compSel == "scissors"){
         return `You Win! ${x} beats ${y}!`;
     } else if(playSel == "rock" && compSel == "paper"){
@@ -42,4 +40,30 @@ else {
     }
 };
 
-document.write(play(playerSelection(), getComputerChoice()));
+
+
+//document.write(
+function game() {
+    const playScore = [];
+    const compScore = [];
+
+    for(let i = 0; i < 5; i++){
+
+
+        if(play(playerSelection(), getComputerChoice()).includes("Win")){
+            playScore.push("I");
+        } else {//(play(playerSelection(), getComputerChoice()).includes("Lose"))
+            compScore.push("I")
+        }
+        console.log(`Player Score: ${playScore}, Computer Score: ${compScore}`);
+
+       //console.log();
+    }
+    if (playScore.length > compScore.length){
+        return "You win!"
+     } else {
+        return "You lose!"
+     }
+    };
+
+document.write(game());
