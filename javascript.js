@@ -1,4 +1,5 @@
 function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
+
 function getComputerChoice() {
     let num = (Math.floor(Math.random()*99))
     if (num <= 33){
@@ -43,13 +44,11 @@ function game() {
         let x = play(playerSelection(), getComputerChoice())
         if(x.includes("Win")){
             playScore.push("I")
-            console.log(x);
         } else {
             compScore.push("I")
-            console.log(x);
         }
+        console.log(x);
         console.log(`Player Score: ${playScore} | Computer Score: ${compScore}`);
-        
 
     }
     if (playScore.length > compScore.length){
