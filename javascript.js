@@ -1,3 +1,13 @@
+//adding UI-------------------------------------------------------------------------------------------------
+
+const butt = document.querySelectorAll("button");
+
+butt[0].addEventListener('click', ()=>{
+    alert("we in");
+});
+
+/*
+//----------------------------------------------------------------------------------------------------------
 //prompt user input - input is passed to playerSelection()
 function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
 
@@ -74,7 +84,7 @@ function game() {
 
     }
 
-    //checks for the longer array length (higher score) after the game is played 5 times
+    //checks for the longer array length (higher score) after the game is played 5 times. prints result to console.
     if (playScore.length > compScore.length){
         console.log("You win!");
      } else {
@@ -83,3 +93,4 @@ function game() {
     };
 
 game();
+*/
