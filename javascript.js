@@ -2,41 +2,60 @@
 
 const butt = document.querySelectorAll("button");
 
-butt[0].addEventListener('click', ()=>{
-    alert("we in");
-});
 
-/*
+    butt[0].addEventListener('click', ()=>{
+        const scoreUl = document.querySelector("ul");
+        const scoreLi = document.createElement("li");
+        let a = play("rock", getComputerChoice());
+        scoreLi.textContent = a;
+        scoreUl.appendChild(scoreLi);
+
+    });
+    butt[1].addEventListener('click', ()=>{
+        const scoreUl = document.querySelector("ul");
+        const scoreLi = document.createElement("li");
+        let b = play("paper", getComputerChoice());
+        scoreLi.textContent = b;
+        scoreUl.appendChild(scoreLi);
+    });
+    butt[2].addEventListener('click', ()=>{
+        const scoreUl = document.querySelector("ul");
+        const scoreLi = document.createElement("li");
+        let c = play("scissors", getComputerChoice());
+        scoreLi.textContent = c;
+        scoreUl.appendChild(scoreLi);
+    });
+
 //----------------------------------------------------------------------------------------------------------
 //prompt user input - input is passed to playerSelection()
-function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
+//function playerSelection() {return prompt("Choose: Rock, Paper, or Scissors");}
 
 //populates computer's choices
 function getComputerChoice() {
     let num = (Math.floor(Math.random()*99))
     if (num <= 33){
-        return "Rock";
+        return "rock";
     }
     else if (num <= 66){
-        return "Paper";
+        return "paper";
     }
     else {
-        return "Scissors";
+        return "scissors";
     };
 }
 
 function play(x, y) {
 
 //normalizes all responses to lower case
-let playSel = x.toLowerCase();
-let compSel = y.toLowerCase();
+let playSel = x;
+let compSel = y;
 
 //if playSel is a valid response, tests for winner
-if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
+//if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
 
     //if player and computer selections are the same, reprompts for input from both users.
     if (playSel == compSel){
-        return play(playerSelection(), getComputerChoice());
+        return play(x, getComputerChoice());
         //if both users select different options, tests for a winner and outputs appropriate response
         } else if(playSel == "rock" && compSel == "scissors"){
             return `You Win! ${x} beats ${y}!`;
@@ -53,11 +72,11 @@ if (playSel === "rock" || playSel === "paper" || playSel === "scissors"){
             }
 }
 //if player input is not a valid response, re-prompts for selection from both users
-else {
-    return play(playerSelection(), getComputerChoice());
-    }
-};
-
+//else {
+ //   return play(playerSelection(), getComputerChoice());
+ //   }
+//};
+/*
 function game() {
 
     //create arrays to track scores of each player sepeartely
@@ -92,5 +111,6 @@ function game() {
      }
     };
 
-game();
+//(game())();
+
 */

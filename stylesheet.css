@@ -1,9 +1,19 @@
+li {
+    list-style-type: none;
+    padding: 5px;
+    margin: 5px;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
 html {
     background-color: black;
     color: white;
 }
 
 button {
-    padding: 10x;
+    padding: 10px;
     margin: 10px;
 }
