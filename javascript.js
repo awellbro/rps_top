@@ -38,23 +38,32 @@ const butt = document.querySelectorAll("button");
 
 function keepCount(x){
     const total = document.querySelectorAll('li');
-    const scoreDiv = document.querySelector('div');
-
+    const scoreDiv = document.querySelector('#result');
+    const scoreBoard = document.querySelector('#score');
 
         if(total.length < 5){
             if(x.includes('Win')){
                 playScore.push('I');
+                scoreBoard.textContent = (`Player: ${playScore} | Computer: ${compScore}`);
             } else {
                 compScore.push('I');
-            };
+                scoreBoard.textContent = (`Player: ${playScore} | Computer: ${compScore}`);
+            }
         } else {
             if (playScore.length > compScore.length){
                 scoreDiv.textContent = ("You win!");
+                replay();
              } else {
                 scoreDiv.textContent = ("You lose!");
+                replay();
              }
         };
 };
+
+function replay(){
+
+}
+
 /*
     if (x.includes('Win')){
         playScore.push("I");
