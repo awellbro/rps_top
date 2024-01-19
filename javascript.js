@@ -1,30 +1,82 @@
 //adding UI-------------------------------------------------------------------------------------------------
 
 const butt = document.querySelectorAll("button");
-
+    const playScore = [];
+    const compScore = [];
 
     butt[0].addEventListener('click', ()=>{
         const scoreUl = document.querySelector("ul");
         const scoreLi = document.createElement("li");
+
         let a = play("rock", getComputerChoice());
+
         scoreLi.textContent = a;
         scoreUl.appendChild(scoreLi);
+        keepCount(a)
 
     });
     butt[1].addEventListener('click', ()=>{
         const scoreUl = document.querySelector("ul");
         const scoreLi = document.createElement("li");
+
         let b = play("paper", getComputerChoice());
+
         scoreLi.textContent = b;
         scoreUl.appendChild(scoreLi);
+        keepCount(b)
     });
     butt[2].addEventListener('click', ()=>{
         const scoreUl = document.querySelector("ul");
         const scoreLi = document.createElement("li");
+
         let c = play("scissors", getComputerChoice());
+
         scoreLi.textContent = c;
         scoreUl.appendChild(scoreLi);
+        keepCount(c)
     });
+
+function keepCount(x){
+    const total = document.querySelectorAll('li');
+    const scoreDiv = document.querySelector('div');
+
+
+        if(total.length < 5){
+            if(x.includes('Win')){
+                playScore.push('I');
+            } else {
+                compScore.push('I');
+            };
+        } else {
+            if (playScore.length > compScore.length){
+                scoreDiv.textContent = ("You win!");
+             } else {
+                scoreDiv.textContent = ("You lose!");
+             }
+        };
+};
+/*
+    if (x.includes('Win')){
+        playScore.push("I");
+    } else {
+        compScore.push("I");
+    }
+
+    console.log(`player: ${playScore}`);
+    console.log(`comp: ${compScore}`);
+
+
+const total = document.querySelectorAll("li");
+const totalArr = Array.from(total);
+const totalText = totalArr.textContent;
+console.log(totalText);
+
+/*
+if(total.length == 5){
+    console.log(Array.from(total))
+    //document.querySelector('div').textContent = "Done";
+}
+*/
 
 //----------------------------------------------------------------------------------------------------------
 //prompt user input - input is passed to playerSelection()
@@ -77,7 +129,7 @@ let compSel = y;
  //   }
 //};
 /*
-function game() {
+function game(a) {
 
     //create arrays to track scores of each player sepeartely
     const playScore = [];
@@ -85,8 +137,8 @@ function game() {
 
     //checks return value strings - all strings containing "Win" push a I tally to player score
     for(let i = 0; i < 5; i++){
-        let x = play(playerSelection(), getComputerChoice())
-        if(x.includes("Win")){
+        let playRes = a;
+        if(playRes.includes("Win")){
             playScore.push("I")
         } else {
             compScore.push("I")
@@ -96,7 +148,7 @@ function game() {
         const compTxt = compScore.toString("");
 
         //prints return value from play()
-        console.log(x);
+        console.log(playRes);
 
         //prints stringified score array from this function (game())
         console.log(`Player Score: ${playTxt} | Computer Score: ${compTxt}`);
@@ -112,5 +164,4 @@ function game() {
     };
 
 //(game())();
-
 */
