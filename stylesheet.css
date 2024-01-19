@@ -1,3 +1,15 @@
+#score {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+#result {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
 li {
     list-style-type: none;
     padding: 5px;
