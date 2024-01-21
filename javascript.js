@@ -41,7 +41,7 @@ function keepCount(x){
     const scoreDiv = document.querySelector('#result');
     const scoreBoard = document.querySelector('#score');
 
-        if(total.length < 5){
+        if(total.length <= 5){
             if(x.includes('Win')){
                 playScore.push('I');
                 scoreBoard.textContent = (`Player: ${playScore} | Computer: ${compScore}`);
