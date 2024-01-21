@@ -1,3 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    border: solid 5px rgb(105, 114, 105);
+    border-radius: 5px;
+}
+
 #score {
     font-size: 25px;
     font-weight: bold;
